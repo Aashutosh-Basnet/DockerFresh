@@ -3,17 +3,15 @@ import React from "react";
 
 import { bungee } from "../fonts";
 import Button from "./ui/button";
-import {robotoCondensed, ptSerif} from '../fonts'
+import { playfairDisplay} from '../fonts'
 
 const Footer = () => {
   return (
-    <footer className={` ${robotoCondensed.className} bg-[rgb(71,166,217)] text-white rounded-t-4xl overflow-hidden`}>
-      {/* Top section */}
+    <footer className={`bg-[rgb(71,166,217)] text-white rounded-t-4xl overflow-hidden`}>
       <div className="flex flex-col lg:flex-row justify-between m-10 gap-10">
-        {/* Left call-to-action */}
         <div className="flex flex-col gap-5 w-[40vw]">
           <div className="text-2xl md:text-3xl leading-snug font-semibold">
-            <p className={`${ptSerif.className}`}>
+            <p className={`${playfairDisplay.className}`}>
               See how we can help <br /> you — get in touch today.
             </p>
           </div>
@@ -23,38 +21,37 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right help section */}
         <div className="flex-1">
-          <div className="bg-white/10 p-6 rounded-2xl shadow-lg backdrop-blur-sm">
-            <h3 className="text-xl font-semibold uppercase tracking-wider border-b border-white/30 pb-2 mb-4">
-              Help & Contact
+          <div className="">
+            <h3 className="text-xl font-semibold uppercase tracking-wider border-b border-white/30 pb-6 mb-4">
+              Help
             </h3>
             <ul className="space-y-4 text-blue-100 text-xl">
-              <li className="border-b border-white/30">
+              <li className="pb-1 border-b border-white/30">
                 <a
                   href="mailto:support@dockerfresh.com"
-                  className="block text-white font-medium hover:text-amber-300 transition-colors duration-300"
+                  className="block text-white font-medium hover:text-gray-300 transition-colors duration-300"
                 >
                   support@dockerfresh.com
                 </a>
               </li>
-              <li className="border-b border-white/30">
+              <li className="pb-1 border-b border-white/30">
                 <a
                   href="tel:+1234567890"
-                  className="block text-white font-medium hover:text-amber-300 transition-colors duration-300"
+                  className="block text-white font-medium hover:text-gray-300 transition-colors duration-300"
                 >
                   +1 (234) 567-890
                 </a>
               </li>
-              <li className="border-b border-white/30">
+              <li className="pb-1 border-b border-white/30">
                 <a
                   href="#"
-                  className="block text-white font-medium hover:text-amber-300 transition-colors duration-300"
+                  className="block text-white font-medium hover:text-gray-300 transition-colors duration-300"
                 >
                   Frequently Asked Questions
                 </a>
               </li>
-              <li className="pt-3 text-xl text-blue-200/70">
+              <li className="text-xl text-blue-200/70">
                 Please contact us with any questions you may have. We&apos;re happy to help.
               </li>
             </ul>
@@ -63,7 +60,7 @@ const Footer = () => {
       </div>
 
       {/* Middle logo */}
-      <div className="text-4xl sm:text-8xl lg:text-9xl flex items-center justify-center pt-10 text-center">
+      <div className="text-3xl sm:text-5xl lg:text-7xl flex items-center justify-center pt-8 text-center">
         <p className={`${bungee.className}`}>DOCKERFRESH</p>
       </div>
 
