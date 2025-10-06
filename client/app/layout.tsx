@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
+import Navbar from "./components/navbar";
+import SmallNavbar from "./components/smallNavbar";
+import Footer from "./components/footer";
 
 export const ebGaramond = EB_Garamond({ 
   subsets: ["latin"], weight: ["400", "500", "600", "700"] });
@@ -21,7 +24,10 @@ export default function RootLayout({
       <body
         className={`${ebGaramond.className} antialiased`}
       >
+        <Navbar/>
+        <SmallNavbar/>
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );

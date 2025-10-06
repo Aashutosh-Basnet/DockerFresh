@@ -1,4 +1,5 @@
-import { Roboto_Condensed, Aladin, Bungee, PT_Serif, Instrument_Serif, Playfair_Display} from "next/font/google";
+import { Roboto_Condensed, Aladin, Bungee, PT_Serif,
+   Instrument_Serif, Playfair_Display, Merriweather} from "next/font/google";
 
 export const aladin = Aladin({ 
   subsets: ["latin"], weight: "400" });
@@ -20,4 +21,8 @@ export const instrumentSerif = Instrument_Serif({
 
 export const playfairDisplay = Playfair_Display({
   subsets: ["latin"], weight: ["400", "700"]
+})
+
+export const merriweather = Merriweather({
+  subsets: ["latin"], weight: ["300", "400", "700"]
 })
