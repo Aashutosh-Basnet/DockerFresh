@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { robotoCondensed, aladin } from "../fonts";
+import Dropdown from "../components/ui/dropdown";
 
 const Navbar = () => {
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [isDropdownVisibleatt, setDropdownVisibleatt] = useState(false);
+  const [isDropdownVisibleshop, setDropdownVisibleshop] = useState(false);
 
   const around_the_table = {
     "ABOUT US": "/about",
@@ -13,15 +15,33 @@ const Navbar = () => {
     "BLOGS": "/blogs",
   };
 
+  const shop_wild_fish = {
+    "SHOP ALL": "/products",
+    "SALMON SHARE": "/products/salmon",
+    "WILD FISH": "/products/wildfish",
+    "PANTRY GOODS": "/products/pantry-goods",
+    "ABOUT THE FISH": "/about-the-fish",
+  };
+
   return (
-    <nav 
-      className="hidden md:block sticky top-0 z-50 bg-white text-gray-400 font-light" 
-      onMouseLeave={() => setDropdownVisible(false)}
+    <nav
+      className="hidden md:block sticky top-0 z-50 bg-white text-gray-500 font-light"
+      onMouseLeave={() => {
+        setDropdownVisibleatt(false);
+        setDropdownVisibleshop(false);
+      }}
     >
       <ul
-        className={`${robotoCondensed.className} p-9 hidden md:flex justify-between items-center text-md `}
+        className={`${robotoCondensed.className} p-9 hidden md:flex justify-between items-center text-sm`}
       >
-        <Link href="/shop" className="hover:text-blue-800 cursor-pointer">
+        <Link
+          href="/shop"
+          className="hover:text-blue-800 cursor-pointer"
+          onMouseEnter={() => {
+            setDropdownVisibleshop(true);
+            setDropdownVisibleatt(false);
+          }}
+        >
           SHOP WILD FISH
         </Link>
 
@@ -36,9 +56,12 @@ const Navbar = () => {
           Dock Fresh
         </Link>
 
-        <li 
+        <li
           className="cursor-pointer hover:text-blue-800"
-          onMouseEnter={() => setDropdownVisible(true)}
+          onMouseEnter={() => {
+            setDropdownVisibleatt(true);
+            setDropdownVisibleshop(false);
+          }}
         >
           AROUND THE TABLE
         </li>
@@ -48,32 +71,8 @@ const Navbar = () => {
         </Link>
       </ul>
 
-      <div
-        className={`
-          ${robotoCondensed.className}
-          absolute left-0 w-full bg-white backdrop-blur-sm py-6 z-[-1]
-          overflow-hidden transition-all duration-300 ease-out
-          ${isDropdownVisible
-            ? 'opacity-100 max-h-96'
-            : 'opacity-0 max-h-0'
-          }
-        `}
-        style={{
-          top: '100%', 
-        }}
-      >
-      <div className="flex justify-between px-[20vw]">
-          {Object.entries(around_the_table).map(([label, href]) => (
-            <Link
-              key={label}
-              href={href}
-              className="text-blue-900 hover:text-gray-700 text-lg transition-colors font-light"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      </div>
+      <Dropdown items={shop_wild_fish} isVisible={isDropdownVisibleshop} />
+      <Dropdown items={around_the_table} isVisible={isDropdownVisibleatt} />
     </nav>
   );
 };

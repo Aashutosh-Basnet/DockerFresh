@@ -1,26 +1,39 @@
-// components/ui/dropdown.tsx
+"use client";
 
 import React from "react";
-import Link from "next/link"; // Use Next.js Link
+import Link from "next/link";
+import { robotoCondensed } from "../../fonts";
 
 interface DropdownProps {
-  items: Record<string, string>; // key: label, value: link
+  items: Record<string, string>;
+  isVisible: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ items }) => {
+const Dropdown: React.FC<DropdownProps> = ({ items, isVisible }) => {
   return (
-    // Add absolute positioning, styling, and z-index
-    <div className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm py-6 shadow-md z-10">
-      <ul className="w-full flex justify-center gap-16 px-20">
+    <div
+      className={`
+        ${robotoCondensed.className}
+        absolute top-full left-0 w-full bg-white py-6 z-40
+        transition-all duration-280
+        ${
+          isVisible
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-full pointer-events-none"
+        }
+      `}
+    >
+      <div className="flex justify-between px-[20vw]">
         {Object.entries(items).map(([label, href]) => (
-          <li
+          <Link
             key={label}
-            className="text-gray-600 hover:text-blue-800 text-lg transition-colors font-semibold"
+            href={href}
+            className="text-blue-900 hover:text-gray-700 text-lg transition-colors font-light"
           >
-            <Link href={href}>{label}</Link>
-          </li>
+            {label}
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

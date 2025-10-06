@@ -29,10 +29,10 @@ const Featured = () => {
   ];
 
   return (
-    <section className="px-4 py-8 md:px-20 md:py-16 bg-blue-100">
+    <section className="px-4 py-8 md:px-20 md:py-16 bg-blue-100/50">
       {/* Header Section */}
       <div className="mb-8 md:mb-10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
-        <p className="text-base md:text-xl text-gray-500 tracking-wide uppercase text-center md:text-left">
+        <p className="text-base md:text-xl text-gray-500 tracking-widest uppercase text-center md:text-left">
           WILD COPPER <br className="hidden md:block" /> RIVER SALMON
         </p>
         <p className={`${instrumentSerif.className} text-xl md:text-3xl text-blue-800 leading-snug tracking-wide text-center max-w-3xl font-bold`}>

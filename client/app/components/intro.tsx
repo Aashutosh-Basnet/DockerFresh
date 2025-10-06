@@ -4,7 +4,7 @@ import {robotoCondensed} from '../fonts'
 const Intro = () => {
   return (
     <div className=''>
-        <p className={`${robotoCondensed.className} md:w-[50vw] text-center mx-auto m-2 mt-32 text-sm font-extralight text-gray-600`}>    
+        <p className={`${robotoCondensed.className} md:w-[50vw] text-center mx-auto m-6 mt-32 text-sm font-extralight text-gray-600 tracking-widest`}>    
             WE&apos;RE SMALL BOAT HARVESTORS
         </p>
         <p className='w-[80vw] md:w-[50vw] text-center mx-auto mb-20 text-xl md:text-4xl font-thin text-blue-900'>
