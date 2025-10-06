@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import ProductCard from "./ui/productCard";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { instrumentSerif } from "../fonts";
+import Image from "next/image";
 
 const Featured = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -28,7 +29,7 @@ const Featured = () => {
   ];
 
   return (
-    <section className="px-4 py-8 md:px-20 md:py-16 bg-white">
+    <section className="px-4 py-8 md:px-20 md:py-16 bg-blue-100">
       {/* Header Section */}
       <div className="mb-8 md:mb-10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
         <p className="text-base md:text-xl text-gray-500 tracking-wide uppercase text-center md:text-left">
@@ -84,6 +85,15 @@ const Featured = () => {
   more..
   <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
 </button>
+      </div>
+      <div>
+        <Image
+          src="/images/verticalWave.svg"
+          alt="Featured Seal"
+          width={300}
+          height={300}
+          className="mx-auto mt-12"
+        />
       </div>
     </section>
   );

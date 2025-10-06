@@ -35,25 +35,39 @@ const SmallNavbar = () => {
     <div className='sm:hidden sticky top-0 left-0 right-0 z-50'>
       <div className='bg-white px-5 py-4 flex items-center justify-between'>
         <Link href="/" className={`${aladin.className} text-3xl text-blue-800`}>
-          Docker Fresh
+          Dock Fresh
         </Link>
-          <button
+<button
   onClick={() => setIsOpen(!isOpen)}
-  className='relative w-8 h-8 flex flex-col justify-center items-center z-[60]'
+  aria-label="Toggle menu"
+  className="w-9 h-9 flex items-center justify-center z-[60]"
 >
-  <span
-    className={`absolute h-0.5 w-6 bg-gray-800 transition-transform duration-300 ease-in-out
-      ${isOpen ? 'rotate-45 !bg-white' : '-translate-y-2'}`}
-  ></span>
-  <span
-    className={`absolute h-0.5 w-6 bg-gray-800 transition-opacity duration-300 ease-in-out
-      ${isOpen ? 'opacity-0' : 'opacity-100'}`}
-  ></span>
-  <span
-    className={`absolute h-0.5 w-6 bg-gray-800 transition-transform duration-300 ease-in-out
-      ${isOpen ? '-rotate-45 !bg-white' : 'translate-y-2'}`}
-  ></span>
+  {isOpen ? (
+    // Show 'X' when open
+    <span className="text-3xl text-white font-light">×</span>
+  ) : (
+    // Show your SVG menu icon when closed
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 27 21.62"
+      className="w-7 h-6"
+    >
+      <path
+        fill="#005395"
+        d="M33.79,5.2a5,5,0,0,1-4-2.05A3.55,3.55,0,0,0,27,1.6a3.55,3.55,0,0,0-2.79,1.55,5,5,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.55,3.55,0,0,0,13.54,1.6a3.53,3.53,0,0,0-2.79,1.55,5.11,5.11,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.55,3.55,0,0,0,0,1.6,3.55,3.55,0,0,0-2.75,3.15a5,5,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.55,3.55,0,0,0-13.46,1.6a3.53,3.53,0,0,0-2.79,1.55,5.11,5.11,0,0,1-4,2.05V3.6a3.55,3.55,0,0,0,2.8-1.55,5,5,0,0,1,4-2.05,5,5,0,0,1,4,2.05A3.55,3.55,0,0,0-6.71,3.6,3.55,3.55,0,0,0-3.92,2.05,5,5,0,0,1,0,0,5,5,0,0,1,4,2.05,3.55,3.55,0,0,0,6.79,3.6a3.55,3.55,0,0,0,2.8-1.55,5,5,0,0,1,4-2.05,5,5,0,0,1,4,2.05A3.55,3.55,0,0,0,20.29,3.6a3.55,3.55,0,0,0,2.79-1.55,4.84,4.84,0,0,1,7.92,0A3.55,3.55,0,0,0,33.79,3.6V5.2Z"
+      />
+      <path
+        fill="#005395"
+        d="M6.79,13.42a5,5,0,0,1-4-2.06A3.55,3.55,0,0,0,0,9.8a3.55,3.55,0,0,0-2.79,1.55,5,5,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.55,3.55,0,0,0-13.46,9.8a3.53,3.53,0,0,0-2.78,1.55,5.1,5.1,0,0,1-4,2.07v-1.6a3.54,3.54,0,0,0,2.8-1.56,5,5,0,0,1,4-2.06,5,5,0,0,1,4,2.05A3.55,3.55,0,0,0-6.71,11.8a3.55,3.55,0,0,0,2.79-1.55A5,5,0,0,1,0,8.2a5,5,0,0,1,4,2.06,3.55,3.55,0,0,0,2.79,1.56,3.54,3.54,0,0,0,2.8-1.56,5,5,0,0,1,4-2.06,5,5,0,0,1,4,2.05,3.55,3.55,0,0,0,2.79,1.55,3.55,3.55,0,0,0,2.79-1.55,4.84,4.84,0,0,1,7.92,0,3.55,3.55,0,0,0,2.79,1.55v1.6a5,5,0,0,1-4-2.05A3.55,3.55,0,0,0,27,9.8a3.55,3.55,0,0,0-2.79,1.55,5,5,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.55,3.55,0,0,0,13.54,9.8a3.53,3.53,0,0,0-2.78,1.55A5.1,5.1,0,0,1,6.79,13.42Z"
+      />
+      <path
+        fill="#005395"
+        d="M33.79,21.63a5,5,0,0,1-4-2.05A3.54,3.54,0,0,0,27,18a3.54,3.54,0,0,0-2.79,1.55,5,5,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.54,3.54,0,0,0,13.54,18a3.54,3.54,0,0,0-2.79,1.54,5.11,5.11,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.55,3.55,0,0,0,0,18a3.55,3.55,0,0,0-2.79,1.55,5,5,0,0,1-4,2.05,5,5,0,0,1-4-2.05A3.55,3.55,0,0,0-13.46,18a3.54,3.54,0,0,0-2.79,1.54,5.11,5.11,0,0,1-4,2.05V20a3.55,3.55,0,0,0,2.8-1.55,5,5,0,0,1,4-2.05,5,5,0,0,1,4,2.05A3.55,3.55,0,0,0-6.71,20a3.55,3.55,0,0,0,2.79-1.55,5,5,0,0,1,4-2.05,5,5,0,0,1,4,2.05A3.55,3.55,0,0,0,6.79,20a3.55,3.55,0,0,0,2.8-1.55,5,5,0,0,1,4-2.05,5,5,0,0,1,4,2.05A3.54,3.54,0,0,0,20.29,20a3.54,3.54,0,0,0,2.79-1.55,4.84,4.84,0,0,1,7.92,0A3.54,3.54,0,0,0,33.79,20v1.6Z"
+      />
+    </svg>
+  )}
 </button>
+
       </div>
 
       {/* Full Screen Menu Overlay */}
@@ -68,7 +82,7 @@ const SmallNavbar = () => {
         {/* NEW: Header inside the overlay */}
         <div className='absolute top-0 left-0 w-full px-5 py-4'>
             <Link href="/" onClick={() => setIsOpen(false)} className={`${aladin.className} text-3xl text-white`}>
-              Docker Fresh
+              Dock Fresh
             </Link>
         </div>
 
@@ -100,7 +114,7 @@ const SmallNavbar = () => {
                     </span>
                     <span
                         className={`
-                        absolute bottom-[-5px] left-0 block h-px bg-cyan-300/50
+                        absolute bottom-[-5px] left-0 block border-b border-dashed border-cyan-300/50
                         transition-all duration-700 ease-in-out
                         ${isOpen ? 'w-full' : 'w-0'}
                         `}

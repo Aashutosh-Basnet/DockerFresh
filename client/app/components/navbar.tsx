@@ -33,7 +33,7 @@ const Navbar = () => {
           href="/"
           className={`${aladin.className} text-3xl text-blue-800 cursor-pointer`}
         >
-          Docker Fresh
+          Dock Fresh
         </Link>
 
         <li 
