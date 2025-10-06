@@ -15,7 +15,7 @@ const Dropdown: React.FC<DropdownProps> = ({ items, isVisible }) => {
       className={`
         ${robotoCondensed.className}
         absolute top-full left-0 w-full bg-white py-6 z-40
-        transition-all duration-280
+        transition-all duration-280 
         ${
           isVisible
             ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -28,7 +28,7 @@ const Dropdown: React.FC<DropdownProps> = ({ items, isVisible }) => {
           <Link
             key={label}
             href={href}
-            className="text-blue-900 hover:text-gray-700 text-lg transition-colors font-light"
+            className="text-blue-900 hover:text-gray-700 text-sm tracking-widest transition-colors font-light"
           >
             {label}
           </Link>

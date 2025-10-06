@@ -23,58 +23,58 @@ const Navbar = () => {
     "ABOUT THE FISH": "/about-the-fish",
   };
 
-  return (
-    <nav
-      className="hidden md:block sticky top-0 z-50 bg-white text-gray-500 font-light"
-      onMouseLeave={() => {
-        setDropdownVisibleatt(false);
-        setDropdownVisibleshop(false);
-      }}
+return (
+  <nav
+    className="hidden md:block sticky top-0 z-50 bg-white text-gray-500 font-light"
+    onMouseLeave={() => {
+      setDropdownVisibleatt(false);
+      setDropdownVisibleshop(false);
+    }}
+  >
+    <ul
+      className={`${robotoCondensed.className} p-9 hidden md:flex justify-between items-center text-sm tracking-widest`}
     >
-      <ul
-        className={`${robotoCondensed.className} p-9 hidden md:flex justify-between items-center text-sm`}
+      <Link
+        href="/shop"
+        className="hover:text-blue-800 cursor-pointer tracking-widest"
+        onMouseEnter={() => {
+          setDropdownVisibleshop(true);
+          setDropdownVisibleatt(false);
+        }}
       >
-        <Link
-          href="/shop"
-          className="hover:text-blue-800 cursor-pointer"
-          onMouseEnter={() => {
-            setDropdownVisibleshop(true);
-            setDropdownVisibleatt(false);
-          }}
-        >
-          SHOP WILD FISH
-        </Link>
+        SHOP WILD FISH
+      </Link>
 
-        <Link href="/about" className="hover:text-blue-800 cursor-pointer">
-          KNOW YOUR FISHERMEN
-        </Link>
+      <Link href="/about" className="hover:text-blue-800 cursor-pointer tracking-widest">
+        KNOW YOUR FISHERMEN
+      </Link>
 
-        <Link
-          href="/"
-          className={`${aladin.className} text-3xl text-blue-800 cursor-pointer`}
-        >
-          Dock Fresh
-        </Link>
+      <Link
+        href="/"
+        className={`${aladin.className} text-3xl text-blue-800 cursor-pointer`}
+      >
+        Dock Fresh
+      </Link>
 
-        <li
-          className="cursor-pointer hover:text-blue-800"
-          onMouseEnter={() => {
-            setDropdownVisibleatt(true);
-            setDropdownVisibleshop(false);
-          }}
-        >
-          AROUND THE TABLE
-        </li>
+      <li
+        className="cursor-pointer hover:text-blue-800 tracking-widest"
+        onMouseEnter={() => {
+          setDropdownVisibleatt(true);
+          setDropdownVisibleshop(false);
+        }}
+      >
+        AROUND THE TABLE
+      </li>
 
-        <Link href="/contact" className="hover:text-blue-800 cursor-pointer">
-          CONTACT US
-        </Link>
-      </ul>
+      <Link href="/contact" className="hover:text-blue-800 cursor-pointer tracking-widest">
+        CONTACT US
+      </Link>
+    </ul>
 
-      <Dropdown items={shop_wild_fish} isVisible={isDropdownVisibleshop} />
-      <Dropdown items={around_the_table} isVisible={isDropdownVisibleatt} />
-    </nav>
-  );
+    <Dropdown items={shop_wild_fish} isVisible={isDropdownVisibleshop} />
+    <Dropdown items={around_the_table} isVisible={isDropdownVisibleatt} />
+  </nav>
+);
 };
 
 export default Navbar;
